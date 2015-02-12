@@ -388,14 +388,18 @@ public class InAppBrowser extends CordovaPlugin {
         }
     }
 
-    /**
-     * Checks to see if it is possible to go back one page in history, then does so.
-     */
-    private void goBack() {
-        if (this.inAppWebView.canGoBack()) {
-            this.inAppWebView.goBack();
-        }
-    }
+       /**
+        * Checks to see if it is possible to go back one page in history, then does so.
+        */
+       public void goBack() {
+           if (this.inAppWebView.canGoBack()) {
+               this.inAppWebView.goBack();
+           }
+       }
+       
+       public boolean canGoBack() {
+           return this.inAppWebView.canGoBack();
+       }
 
     /**
      * Checks to see if it is possible to go forward one page in history, then does so.
